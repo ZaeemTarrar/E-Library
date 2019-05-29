@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('test', 'TestController@test')->name('test');
+Route::get('demo', 'DemotController@demo')->name('demo');
