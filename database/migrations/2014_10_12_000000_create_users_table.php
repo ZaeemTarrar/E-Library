@@ -15,7 +15,21 @@ class CreateUsersTable extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');$table->string('email')->unique();$table->string('password');$table->rememberToken();$table->integer('role_id')->unsigned()->default(0);
+
+            $table->string('name');
+            $table->string('email')->unique();
+            $table->string('password');
+
+            $table->string('first_name')->nullable();
+            $table->string('last_name')->nullable();
+            $table->string('contact_number');
+            $table->string('about')->nullable();
+            $table->date('dob')->nullable();
+            $table->boolean('gender')->default(1);
+            $table->text('snap')->nullable();
+
+            $table->rememberToken();
+            $table->integer('role_id')->unsigned()->default(0);
             $table->timestamps();
         });
     }
@@ -31,4 +45,3 @@ class CreateUsersTable extends Migration
     }
 }
 
-        

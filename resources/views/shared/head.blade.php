@@ -67,7 +67,8 @@
     <script src="{{ url('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ url('assets/js/respond.min.js') }}"></script>
 
-    
+
     <![endif]-->
   <link rel="stylesheet" href="{{ url('css/custom.css') }}">
+  @yield('style')
 </head>

@@ -16,6 +16,38 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+    //Add By Faraz
+    protected function uploadfile($request){
+        $snap ='';
+        if($request->hasFile('snap')){
+            $path = $request->file('snap');
+            $target = 'public\images';
+            $snap  = Storage::putFile($target,$path);
+            $snap = substr($snap,7,strlen($snap)-7);
+        }
+        return $snap;
+    }
+
+    protected function updatefile($request,$img){
+        $snap =$img;
+        if($request->hasFile('snap')){
+            if($img!=''){
+                if($this->removefile($img)){
+                    $path = $request->file('snap');
+                    $target = 'public\images';
+                    $snap  = Storage::putFile($target,$path);
+                    $snap = substr($snap,7,strlen($snap)-7);
+                }
+            }else{
+                $path = $request->file('snap');
+                $target = 'public\images';
+                $snap  = Storage::putFile($target,$path);
+                $snap = substr($snap,7,strlen($snap)-7);
+            }
+        }
+        return $snap;
+    }
+    //End
     public function sessionize($request, $list)
     {
         foreach ($list as $key => $item) {

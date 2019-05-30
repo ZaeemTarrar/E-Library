@@ -51,6 +51,7 @@ class RegisterController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users',
             'password' => 'required|string|min:6|confirmed',
+            'contact_number' => 'required',
             'role' => 'required'
         ]);
     }
@@ -67,6 +68,8 @@ class RegisterController extends Controller
         $u->name = $data['name'];
         $u->email = $data['email'];
         $u->password = bcrypt($data['password']);
+        $u->contact_number = $data['contact_number'];
+        $u->gender = $data['gender'];
         $u->role_id = $data['role'];
         $u->save();
         return $u;

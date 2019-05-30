@@ -226,6 +226,12 @@
 															<input type="password" name="password_confirmation" class="form-control" placeholder="Repeat password" />
 															<i class="ace-icon fa fa-retweet"></i>
 														</span>
+                                                    </label>
+                                                    <label class="block clearfix">
+														<span class="block input-icon input-icon-right">
+															<input type="text" name="contact_number" class="form-control" placeholder="Contact Number" />
+															<i class="ace-icon fa fa-retweet"></i>
+														</span>
 													</label>
 
                                                     <label class="block clearfix">
@@ -242,6 +248,22 @@
                                                             {{--  <i class="ace-icon fa fa-retweet"></i>  --}}
                                                         </span>
                                                     </label>
+                                                    <div class="form-group">
+                                                            <label class="col-sm-3 control-label no-padding-right">Gender</label>
+
+                                                            <div class="col-sm-9">
+                                                                <label class="inline">
+                                                                    <input name="gender"  type="radio" value="1" class="ace" checked="checked">
+                                                                    <span class="lbl middle"> Male</span>
+                                                                </label>
+
+                                                                &nbsp; &nbsp; &nbsp;
+                                                                <label class="inline">
+                                                                    <input name="gender" type="radio" value="0" class="ace">
+                                                                    <span class="lbl middle"> Female</span>
+                                                                </label>
+                                                            </div>
+                                                        </div>
 
 													{{--  <label class="block">
 														<input type="checkbox" class="ace" />

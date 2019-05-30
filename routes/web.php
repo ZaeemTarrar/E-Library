@@ -34,4 +34,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     ###  Route
     ###  New Route Here
+    Route::get('/user/profile','UserController@profile')->name('user.profile');
+    Route::get('/user/profile/edit','UserController@profileEdit')->name('user.profile.edit');
+    Route::post('/user/profile/update','UserController@profileUpdate')->name('user.profile.update');
 });

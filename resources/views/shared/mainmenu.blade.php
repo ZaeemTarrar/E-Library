@@ -121,7 +121,7 @@
                                         <div class="clearfix">
                                             <span class="pull-right" style="line-height: 10px; ">
                                                 <i style="border-radius: 100px; " class="btn btn-xs no-hover
-                                                
+
                                                 @if( $item->notificationtype->name == 'success' )
                                                     btn-success
                                                 @elseif( $item->notificationtype->name == 'error' )
@@ -134,8 +134,8 @@
                                                     btn-default
                                                 @endif
 
-                                                fa 
-                                                
+                                                fa
+
                                                 @if( $item->notificationtype->name == 'success' )
                                                     fa-check
                                                 @elseif( $item->notificationtype->name == 'error' )
@@ -307,7 +307,7 @@
                         </li>
 
                         <li>
-                            <a href="profile.html">
+                            <a href="{{route('user.profile')}}">
                                 <i class="ace-icon fa fa-user"></i>
                                 Profile
                             </a>
