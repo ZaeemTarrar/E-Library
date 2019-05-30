@@ -37,6 +37,9 @@
 
                     </div>
                 </div>
+                <div>
+                    <h4><a href="{{route('user.profile.password.reset')}}"><i class="fa fa-retweet" ></i> Reset Password</a></h4>
+                </div>
             </div>
 
             <div class="space-6"></div>

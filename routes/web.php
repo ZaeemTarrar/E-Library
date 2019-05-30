@@ -37,4 +37,6 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/user/profile','UserController@profile')->name('user.profile');
     Route::get('/user/profile/edit','UserController@profileEdit')->name('user.profile.edit');
     Route::post('/user/profile/update','UserController@profileUpdate')->name('user.profile.update');
+    Route::get('/user/profile/password/reset','UserController@passwordreset')->name('user.profile.password.reset');
+    Route::post('/user/profile/password/reseted','UserController@passwordreseted')->name('user.profile.password.reseted');
 });
