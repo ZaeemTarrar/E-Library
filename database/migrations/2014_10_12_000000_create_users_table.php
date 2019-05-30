@@ -27,6 +27,7 @@ class CreateUsersTable extends Migration
             $table->date('dob')->nullable();
             $table->boolean('gender')->default(1);
             $table->text('snap')->nullable();
+            $table->string('status')->default(1);
 
             $table->rememberToken();
             $table->integer('role_id')->unsigned()->default(0);

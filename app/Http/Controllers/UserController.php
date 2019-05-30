@@ -30,6 +30,7 @@ class UserController extends Controller
         $user->gender = $request->gender;
         $user->dob = date('Y-m-d',strtotime($request->dob));
         $user->save();
+        Session::flash('message','Profile has been updated success fully.');
         return redirect()->route('user.profile');
     }
 
@@ -53,7 +54,7 @@ class UserController extends Controller
         ]);
         $user->password = Hash::make($request['newpassword']);
         $user->save();
-
+        Session::flash('message','Password has been updated success fully.');
 
         return redirect()->route('user.profile');
 

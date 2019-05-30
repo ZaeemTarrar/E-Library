@@ -15,7 +15,7 @@
              *
              * @var array
              */
-            protected $fillable = ['name', 'email', 'password', 'role_id','first_name','last_name','contact_number','about','dob','gender','snap'];
+            protected $fillable = ['name', 'email', 'password', 'role_id','first_name','last_name','contact_number','about','dob','gender','snap'.'status'];
             protected $hidden = [
                 'password', 'remember_token',
             ];
@@ -30,6 +30,27 @@
             {
                 // Your your own implementation.
                 $this->notify(new ResetPasswordNotification($token));
+            }
+
+            //Relation
+            public function favorites()
+            {
+                return $this->hasMany('App\Favorite');
+            }
+
+            public function views()
+            {
+                return $this->hasMany('App\View');
+            }
+
+            public function bookmarks()
+            {
+                return $this->hasMany('App\Bookmark');
+            }
+
+            public function books()
+            {
+                return $this->hasMany('App\Book');
             }
         }
 
