@@ -31,6 +31,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     ###  Route
     Route::get('/', 'DashboardController@index')->name('dashboard');
+    Route::resource('Language','LanguagesController');
 
     ###  Route
     ###  New Route Here

@@ -21,7 +21,7 @@
 
   <!-- ace styles -->
   <link rel="stylesheet" href="{{ url('assets/css/ace.min.css') }}" class="ace-main-stylesheet" id="main-ace-style" />
-
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <!--[if lte IE 9]>
         <link rel="stylesheet" href="{{ url('assets/css/ace-part2.min.css') }}" class="ace-main-stylesheet" />
     <![endif]-->
@@ -67,7 +67,7 @@
     <script src="{{ url('assets/js/html5shiv.min.js') }}"></script>
     <script src="{{ url('assets/js/respond.min.js') }}"></script>
 
-    
+
     <![endif]-->
   <link rel="stylesheet" href="{{ url('css/custom.css') }}">
 </head>
