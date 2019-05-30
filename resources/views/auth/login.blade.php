@@ -152,14 +152,20 @@
 												Enter your email and to receive instructions
 											</p>
 
-											<form>
+                                            <form class="form-horizontal" method="POST" action="{{ route('password.email') }}">
+                                                {{ csrf_field() }}
 												<fieldset>
-													<label class="block clearfix">
+													<label class="block clearfix {{ $errors->has('email') ? ' has-error' : '' }}">
 														<span class="block input-icon input-icon-right">
-															<input type="email" class="form-control" placeholder="Email" />
+															<input type="email" name="email" class="form-control" placeholder="Email" />
 															<i class="ace-icon fa fa-envelope"></i>
 														</span>
-													</label>
+                                                    </label>
+                                                    @if ($errors->has('email'))
+                                                        <span class="help-block">
+                                                            <strong>{{ $errors->first('email') }}</strong>
+                                                        </span>
+                                                    @endif
 
 													<div class="clearfix">
 														<button type="button" class="width-35 pull-right btn btn-sm btn-danger">
@@ -317,33 +323,33 @@
 				$(target).addClass('visible');//show target
 			 });
 			});
-			
-			
-			
+
+
+
 			//you don't need this, just used for changing background
 			jQuery(function($) {
 			 $('#btn-login-dark').on('click', function(e) {
 				$('body').attr('class', 'login-layout');
 				$('#id-text2').attr('class', 'white');
 				$('#id-company-text').attr('class', 'blue');
-				
+
 				e.preventDefault();
 			 });
 			 $('#btn-login-light').on('click', function(e) {
 				$('body').attr('class', 'login-layout light-login');
 				$('#id-text2').attr('class', 'grey');
 				$('#id-company-text').attr('class', 'blue');
-				
+
 				e.preventDefault();
 			 });
 			 $('#btn-login-blur').on('click', function(e) {
 				$('body').attr('class', 'login-layout blur-login');
 				$('#id-text2').attr('class', 'white');
 				$('#id-company-text').attr('class', 'light-blue');
-				
+
 				e.preventDefault();
 			 });
-			 
+
 			});
 		</script>
 	</body>
