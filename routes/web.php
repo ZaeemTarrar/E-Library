@@ -33,5 +33,8 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'DashboardController@index')->name('dashboard');
 
     ###  Route
+    Route::get('/category', 'CategoryController@index')->name('category.index');
+
+    ###  Route
     ###  New Route Here
 });
