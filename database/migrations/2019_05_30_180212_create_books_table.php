@@ -19,7 +19,7 @@ class CreateBooksTable extends Migration
             $table->string('name');
             $table->string('author');
             $table->string('file');
-            $table->boolean('recommendation');
+            $table->string('recommendation');
             $table->string('pages');
             $table->boolean('active')->default(1);
 
@@ -27,6 +27,7 @@ class CreateBooksTable extends Migration
             $table->integer('grade_id')->unsigned()->default(0);
             $table->integer('language_id')->unsigned()->default(0);
             $table->integer('category_id')->unsigned()->default(0);
+            $table->integer('user_id')->unsigned()->default(0);
 
             $table->timestamps();
         });

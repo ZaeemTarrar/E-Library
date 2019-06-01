@@ -230,7 +230,7 @@
                                                     <label class="block clearfix">
 														<span class="block input-icon input-icon-right">
 															<input type="text" name="contact_number" class="form-control" placeholder="Contact Number" />
-															<i class="ace-icon fa fa-phone"></i>
+															<i class="ace-icon fa fa-phone  "></i>
 														</span>
 													</label>
 

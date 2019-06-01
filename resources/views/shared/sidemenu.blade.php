@@ -50,7 +50,28 @@
 
             <b class="arrow"></b>
         </li>
-
+        @if( Auth::user()->role->access == 0 )
+            <li class="">
+                <a href="#" class="dropdown-toggle">
+                    <i class="menu-icon fa fa-cubes"></i>
+                    <span class="menu-text">
+                        Books
+                    </span>
+                </a>
+                <ul class="submenu">
+                    <li class="">
+                        <a href="{{route('book.create')}}" class="">
+                            Create Book
+                        </a>
+                    </li>
+                    <li class="">
+                        <a href="{{route('book.index')}}" class="">
+                            Book List
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        @endif
         @if( Auth::user()->role->access == 0 )
         <li class="">
             <a href="#" class="dropdown-toggle">

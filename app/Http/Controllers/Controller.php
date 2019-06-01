@@ -17,30 +17,61 @@ class Controller extends BaseController
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
     //Add By Faraz
-    protected function uploadfile($request){
+    protected function uploadfile($request,$filename='snap'){
         $snap ='';
-        if($request->hasFile('snap')){
-            $path = $request->file('snap');
-            $target = 'public\images';
+        if($request->hasFile($filename)){
+            $path = $request->file($filename);
+            if($filename!='snap'){
+               $ext = $request->file($filename)->getClientOriginalExtension();
+                if($ext=='pdf'||$ext=='doc'||$ext=='txt')
+                {
+                    $target = 'public\document';
+                }else if($ext=='mp3'||$ext=='mp4'){
+                    $target = 'public\audio';
+                }
+            }else{
+                $target = 'public\images';
+            }
             $snap  = Storage::putFile($target,$path);
             $snap = substr($snap,7,strlen($snap)-7);
         }
         return $snap;
     }
 
-    protected function updatefile($request,$img){
+    protected function updatefile($request,$img,$filename="snap"){
         $snap =$img;
-        if($request->hasFile('snap')){
+        if($request->hasFile($filename)){
             if($img!=''){
-                if($this->removefile($img)){
-                    $path = $request->file('snap');
-                    $target = 'public\images';
+                if($this->remove($img)){
+                    $path = $request->file($filename);
+
+                    if($filename!='snap'){
+                        $ext = $request->file($filename)->getClientOriginalExtension();
+                         if($ext=='pdf'||$ext=='doc'||$ext=='txt')
+                         {
+                             $target = 'public\document';
+                         }else if($ext=='mp3'||$ext=='mp4'){
+                             $target = 'public\audio';
+                         }
+                     }else{
+                         $target = 'public\images';
+                     }
                     $snap  = Storage::putFile($target,$path);
                     $snap = substr($snap,7,strlen($snap)-7);
                 }
             }else{
-                $path = $request->file('snap');
-                $target = 'public\images';
+                $path = $request->file($filename);
+                if($filename!='snap'){
+                    $ext = $request->file($filename)->getClientOriginalExtension();
+                     if($ext=='pdf'||$ext=='doc'||$ext=='txt')
+                     {
+                         $target = 'public\document';
+                     }else if($ext=='mp3'||$ext=='mp4'){
+                         $target = 'public\audio';
+                     }
+                 }else{
+                     $target = 'public\images';
+                 }
                 $snap  = Storage::putFile($target,$path);
                 $snap = substr($snap,7,strlen($snap)-7);
             }

@@ -1,0 +1,10 @@
+.has-error{
+    border: 1px solid #791515b5 !important;
+background-color: #ff888830 !important ;
+}
+.help-block{
+    color:#ad5e5e !important;
+}
+.col-lg-12{
+    width: 100% !important;
+}

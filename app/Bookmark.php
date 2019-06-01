@@ -15,11 +15,11 @@ class Bookmark extends Model
 
     public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function book()
     {
-        return $this->hasOne('App\Book');
+        return $this->belongsTo('App\Book');
     }
 }

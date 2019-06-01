@@ -21,22 +21,22 @@ class Book extends Model
 
     public function grade()
     {
-        return $this->hasOne('App\Grade');
+        return $this->belongsTo('App\Grade');
     }
 
     public function language()
     {
-        return $this->hasOne('App\Language');
+        return $this->belongsTo('App\Language');
     }
 
     public function category()
     {
-        return $this->hasOne('App\Category');
+        return $this->belongsTo('App\Category');
     }
 
     public function user()
     {
-        return $this->hasOne('App\User');
+        return $this->belongsTo('App\User');
     }
 
     public function favorites()
