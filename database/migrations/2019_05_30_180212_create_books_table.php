@@ -20,7 +20,7 @@ class CreateBooksTable extends Migration
             $table->string('author');
             $table->string('file');
             $table->string('recommendation');
-            $table->string('pages');
+            $table->integer('pages')->unsigned()->default(0);
             $table->boolean('active')->default(1);
 
             //Relations
